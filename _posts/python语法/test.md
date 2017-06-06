@@ -2,7 +2,7 @@
 
 layout: post
 
-title:  "python基本语法笔记"
+title:  "test"
 
 date:   2017-06-02 18:12:00
 
