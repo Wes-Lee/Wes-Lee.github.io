@@ -10,7 +10,22 @@ categories: python爬虫工具库
 
 ---
 
+* [Cookie](#Cookie)
+	* [Cookie介绍](#Cookie介绍)
+	* [Cookielib](#Cookielib)
+		* [获取Cookie保存到变量](#获取Cookie保存到变量)
+		* [保存Cookie到文件](#保存Cookie到文件)
+		* [从文件中获取Cookie并访问](#从文件中获取Cookie并访问)
+		* [利用cookie模拟登陆](#利用cookie模拟登陆)
+* [URLError](#URLError)
+	* [HTTPError](#HTTPError)
+
+
+<div id="Cookie"></div>
+
 # Cookie
+
+<div id="Cookie介绍"></div>
 
 ## Cookie介绍
 
@@ -19,12 +34,16 @@ categories: python爬虫工具库
 
 <br />
 
+<div id="Cookielib"></div>
+
 ## Cookielib
 
 cookielib模块的主要作用是提供可存储cookie的对象，以便于与urllib2模块配合使用来访问Internet资源。Cookielib模块非常强大，我们可以利用本模块的**CookieJar类**的对象来捕获cookie并在后续连接请求时重新发送，比如可以实现模拟登录功能。该模块主要的对象有**CookieJar**、**FileCookieJar**、**MozillaCookieJa**r、**LWPCookieJar**  
 **CookieJar -> 派生 -> FileCookieJar -> 派生 –> MozillaCookieJar和LWPCookieJar**  
 
 <br />
+
+<div id="获取Cookie保存到变量"></div>
 
 ### 获取Cookie保存到变量
 
@@ -50,6 +69,8 @@ for item in cookie:
 
 <br />
 
+<div id="保存Cookie到文件"></div>
+
 ### 保存Cookie到文件
 
 除了把cookie保存到变量里，还可以用**FileCookieJar类**保存到文件中，这里例子用的是他的子类**MozillaCookieJar**实现的  
@@ -74,6 +95,8 @@ cookie.save(ignore_discard=True, ignore_expires=True)
 
 <br />
 
+<div id="从文件中获取Cookie并访问"></div>
+
 ### 从文件中获取Cookie并访问
 
 从文件中获取cookies也同样是用MozillaCookieJar对象  
@@ -95,6 +118,8 @@ print response.read()
 ```
 
 <br />
+
+<div id="利用cookie模拟登陆"></div>
 
 ### 利用cookie模拟登陆
 
@@ -120,7 +145,10 @@ print response.read()
 
 <br />
 
+<div id="URLError"></div>
+
 ## URLError
+
 URLError可能产生的原因：
 1. 网络无连接，即本机无法上网
 2. 连接不到特定的服务器
@@ -140,7 +168,10 @@ except urllib2.URLError, e:
 
 <br />
 
+<div id="HTTPError"></div>
+
 ### HTTPError
+
 HTTPError是URLError的子类，在你利用urlopen方法发出一个请求时，服务器上都会对应一个应答对象response，其中它包含一个数字”状态码”  
 HTTP状态码表示HTTP协议所返回的响应的状态  
 **由于HTTPError是URLError的子类，所以在捕获HTTPError要在URLError之前**  
