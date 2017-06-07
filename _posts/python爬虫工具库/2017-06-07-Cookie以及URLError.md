@@ -69,7 +69,8 @@ response = opener.open("http://www.baidu.com")
 cookie.save(ignore_discard=True, ignore_expires=True)
 ```
 其中`.save()`函数中的**ignore_discard**的意思是即使cookies将被丢弃也将它保存下来，**ignore_expires**的意思是如果在该文件中Cookies已经存在，则覆盖原文件写入  
-  
+
+<br />
 
 ### 从文件中获取Cookie并访问
 
