@@ -24,6 +24,8 @@ categories: python爬虫工具库
 cookielib模块的主要作用是提供可存储cookie的对象，以便于与urllib2模块配合使用来访问Internet资源。Cookielib模块非常强大，我们可以利用本模块的**CookieJar类**的对象来捕获cookie并在后续连接请求时重新发送，比如可以实现模拟登录功能。该模块主要的对象有**CookieJar**、**FileCookieJar**、**MozillaCookieJa**r、**LWPCookieJar**  
 **CookieJar -> 派生 -> FileCookieJar -> 派生 –> MozillaCookieJar和LWPCookieJar**  
 
+<br />
+
 ### 获取Cookie保存到变量
 
 可以用**CookieJar对象**实现cookie的获取和存储，再利用urllib2库的HTTPCookieProcessor对象来创建cookie处理器，再构建opener  
@@ -45,9 +47,7 @@ for item in cookie:
 ```
 
 上面的例子将opener打开的网页的cookie保存到变量多，可以打印出cookie的值  
-
-<br />
-
+	
 ### 保存Cookie到文件
 
 除了把cookie保存到变量里，还可以用**FileCookieJar类**保存到文件中，这里例子用的是他的子类**MozillaCookieJar**实现的  
@@ -117,4 +117,10 @@ print response.read()
 ```
 
 <br />
+
+## URLError
+URLError可能产生的原因：
+1. 网络无连接，即本机无法上网
+连接不到特定的服务器
+服务器不存在
 
