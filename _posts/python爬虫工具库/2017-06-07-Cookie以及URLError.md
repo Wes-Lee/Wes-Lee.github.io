@@ -47,7 +47,9 @@ for item in cookie:
 ```
 
 上面的例子将opener打开的网页的cookie保存到变量多，可以打印出cookie的值  
-	
+
+<br />
+
 ### 保存Cookie到文件
 
 除了把cookie保存到变量里，还可以用**FileCookieJar类**保存到文件中，这里例子用的是他的子类**MozillaCookieJar**实现的  
@@ -121,6 +123,52 @@ print response.read()
 ## URLError
 URLError可能产生的原因：
 1. 网络无连接，即本机无法上网
-连接不到特定的服务器
-服务器不存在
+2. 连接不到特定的服务器
+3. 服务器不存在
+4. 连接超时
+
+在代码中，我们需要用**try-except语句**来包围并捕获相应的异常  
+```python
+import urllib2
+
+requset = urllib2.Request('http://www.xxxxx.com')
+try:
+    urllib2.urlopen(request)
+except urllib2.URLError, e:
+    print e.reason
+```
+
+<br />
+
+### HTTPError
+HTTPError是URLError的子类，在你利用urlopen方法发出一个请求时，服务器上都会对应一个应答对象response，其中它包含一个数字”状态码”  
+HTTP状态码表示HTTP协议所返回的响应的状态  
+**由于HTTPError是URLError的子类，所以在捕获HTTPError要在URLError之前**  
+还用**hasattr**属性提前对属性进行判断  
+```python
+import urllib2
+
+req = urllib2.Request('http://blog.csdn.net/cqcre')
+try:
+    urllib2.urlopen(req)
+except urllib2.HTTPError, e:
+    print e.code
+except urllib2.URLError, e:
+    if hasattr(e,"reason"):
+        print e.reason
+else:
+    print "OK"
+```
+
+<br />
+
+**HTTP1.1状态码大致分五大类：**
+1. 100-199 用于指定客户端应相应的某些动作
+2. 200-299 用于表示请求成功
+3. 300-399 用于已经移动的文件并且常被包含在定位头信息中指定新的地址信息
+4. 400-499 用于指出客户端的错误
+5. 500-599 用于支持服务器错误
+
+**具体的可以遇到时再搜索**
+
 
