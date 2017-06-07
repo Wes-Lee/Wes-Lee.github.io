@@ -44,9 +44,9 @@ for item in cookie:
     print 'Value = '+item.value
 ```
 
-<br />
-
 上面的例子将opener打开的网页的cookie保存到变量多，可以打印出cookie的值  
+
+<br />
 
 ### 保存Cookie到文件
 
@@ -92,6 +92,8 @@ response = opener.open(req)
 print response.read()
 ```
 
+<br />
+
 ### 利用cookie模拟登陆
 
 下面的例子是将cookie存储在变量里，模拟登陆教务系统后访问个人主页  
@@ -114,4 +116,5 @@ response = opener.open(request)
 print response.read()
 ```
 
+<br />
 
