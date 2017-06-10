@@ -4,7 +4,7 @@ layout: post
 
 title:  "Git-Github"
 
-date:   2017-06-05 18:06:00
+date:   2017-06-10 10:06:00
 
 categories: Git
 
@@ -20,5 +20,5 @@ Git和其他**集中式版本控制系统**不一样，不需要服务器端软�
 
 ## Git工作过程
 
-![](https://aswz.github.io\assets\img\Git\Git-Github\Git工作过程.png)
+![](https://aswz.github.io/assets/img/Git/Git-Github/Git工作过程.png)
 
