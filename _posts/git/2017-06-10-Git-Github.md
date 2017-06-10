@@ -10,9 +10,37 @@ categories: Git
 
 ---
 
+这份笔记整理的资料大部分来自廖雪峰老师的[Git教程](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
+
+* [Git](#Git)
+	* [Git介绍](#Git介绍)
+	* [Git工作过程](#Git工作过程)
+	* [版本回退、撤销删除、删除文件](#版本回退、撤销删除、删除文件)
+		* [版本回退](#版本回退)
+		* [撤销删除](#撤销删除)
+		* [删除文件](#删除文件)
+	* [分支管理](#分支管理)
+		* [创建、合并、删除分支](#创建、合并、删除分支)
+		* [解决冲突](#解决冲突)
+		* [分支管理策略](#分支管理策略)
+		* [Bug分支和Feature分支](#Bug分支和Feature分支)
+	* [标签管理](#标签管理)
+		* [创建标签和操作标签](#创建标签和操作标签)
+	* [利用cookie模拟登陆](#利用cookie模拟登陆)
+* [Github](#Github)
+	* [远程仓库](#远程仓库)
+		* [添加远程库](#添加远程库)
+		* [克隆远程库](#克隆远程库)
+* [Git常用命令](#Git常用命令)
+
+
+<div id="Git"></div>
+
 # Git
 
 <br />
+
+<div id="Git介绍"></div>
 
 ## Git介绍
 
@@ -21,6 +49,8 @@ Git和其他**集中式版本控制系统**不一样，不需要服务器端软�
 **Git还有强大的分支合并管理功能**  
 
 <br />
+
+<div id="Git工作过程"></div>
 
 ## Git工作过程
 **工作区（Working Directory）**：就是你在电脑里能看到的目录  
@@ -36,9 +66,13 @@ Git的版本库里存了很多东西，其中最重要的就是称为**stage（�
 
 <br />
 
+<div id="版本回退、撤销删除、删除文件"></div>
+
 ## 版本回退、撤销删除、删除文件
 
 <br />
+
+<div id="版本回退"></div>
 
 ### 版本回退
 
@@ -60,6 +94,8 @@ HEAD is now at 0e7dd65 add test.txt
 ```
 
 <br />
+
+<div id="撤销删除"></div>
 
 ### 撤销删除
 
@@ -84,6 +120,8 @@ M       readme.txt
 
 <br />
 
+<div id="删除文件"></div>
+
 ### 删除文件
 
 要删除版本库文件，先将工作区对应文件删除，再用`git rm file`删除，并用`git commit`提交  
@@ -106,12 +144,16 @@ $ git checkout -- test.txt
 
 <br />
 
+<div id="分支管理"></div>
+
 ## 分支管理
 
 在新建版本库的时候都会有一条默认的分支`master`，可以在原分支新建一条互不干扰的分支，也可以进行分支合并  
 详细的分支和HEAD指针图解可以参阅[分支图解(廖雪峰老师)](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001375840038939c291467cc7c747b1810aab2fb8863508000)  
 
 <br />
+
+<div id="创建、合并、删除分支"></div>
 
 ### 创建、合并、删除分支
 
@@ -153,6 +195,8 @@ Deleted branch dev (was e6f4910).
 
 <br />
 
+<div id="解决冲突"></div>
+
 ### 解决冲突
 
 当两个分支都有修改，在合并的时候就有可能会产生冲突  
@@ -170,6 +214,8 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 <br />
 
+<div id="分支管理策略"></div>
+
 ### 分支管理策略
 
 在通常情况下Git会用`Fast forward`模式，但这种模式下，删除分支后，会丢掉分支信息  
@@ -177,6 +223,8 @@ Automatic merge failed; fix conflicts and then commit the result.
 在合并时加上`--no-ff`参数，`git merge --no-ff`命令，由于合并要创建一个新的commit，所以加上`-m`参数，把commit描述写进去  
 
 <br />
+
+<div id="Bug分支和Feature分支"></div>
 
 ### Bug分支和Feature分支
 
@@ -186,11 +234,15 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 <br />
 
+<div id="标签管理"></div>
+
 ## 标签管理
 
 在Git中可以为版本库的修改提交打上标签，方便查找并取出历史版本，标签虽然是版本库的快照，但其实它就是指向某个**commit的指针**  
 
 <br />
+
+<div id="创建标签和操作标签"></div>
 
 ### 创建标签和操作标签
 
@@ -207,20 +259,52 @@ $ git tag -a v0.1 -m "version 0.1 released" 3628164
 
 <br />
 
+<div id="Github"></div>
+
 # Github
 
 **Github是一个提供Git仓库托管服务的网站**  
 
 <br />
 
+<div id="远程仓库"></div>
+
 ## 远程仓库
+
+Git各个工作区之间的关系：  
+![](https://aswz.github.io/assets/img/Git/Git-Github/Git各个区域的关系.png)
 
 由于你的本地Git仓库和GitHub仓库之间的传输是通过**SSH加密**的，所以要先设置账户和本地的**SSH Key**，是为了识别出你推送的提交确实是你推送的，具体设置方法可以直接搜索  
 
 <br />
 
-### 添加仓库
+<div id="添加远程库"></div>
 
-首先要在Github上创建一个仓库，在
+### 添加远程库
 
+首先要在Github上创建一个仓库，在将本地库与远程库关联
+```
+$ git remote add origin git@github.com:username/xxxx.git
+```
+`origin`**是远程库的名字**，这是Git默认的叫法，`username`表示用户名后面跟的是对应的Github仓库名称
+然后将本地库内容推送至远程库使用`git push -u origin master`**第一次推送要加上**`-u`**的参数**，之后推送直接用`git push origin master`
 
+<br />
+
+<div id="克隆远程库"></div>
+
+### 克隆远程库
+
+在对应的目录下，执行下面命令
+```
+$ git clone git@github.com:username/xxxxxx.git
+```
+`username`表示用户名后面跟的是对应的Github仓库名称
+
+<br />
+
+<div id="Git常用命令"></div>
+
+# Git常用命令
+
+![](https://aswz.github.io/assets/img/Git/Git-Github/Git常用命令.jpeg)
