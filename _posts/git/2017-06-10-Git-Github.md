@@ -26,7 +26,6 @@ categories: Git
 		* [Bug分支和Feature分支](#Bug分支和Feature分支)
 	* [标签管理](#标签管理)
 		* [创建标签和操作标签](#创建标签和操作标签)
-	* [利用cookie模拟登陆](#利用cookie模拟登陆)
 * [Github](#Github)
 	* [远程仓库](#远程仓库)
 		* [添加远程库](#添加远程库)
