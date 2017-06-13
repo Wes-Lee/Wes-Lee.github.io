@@ -285,10 +285,19 @@ Git各个工作区之间的关系：
 ```
 $ git remote add origin git@github.com:username/xxxx.git
 ```
-`origin`**是远程库的名字**，这是Git默认的叫法，`username`表示用户名后面跟的是对应的Github仓库名称
-然后将本地库内容推送至远程库使用`git push -u origin master`**第一次推送要加上**`-u`**的参数**，之后推送直接用`git push origin master`
+`origin`**是远程库的名字**，这是Git默认的叫法，`username`表示用户名后面跟的是对应的Github仓库名称  
 
 <br />
+
+### 推送至远程库
+
+将本地库内容推送至远程库使用`git push -u origin master`**第一次推送要加上**`-u`**的参数**，之后推送直接用`git push origin master`  
+**master也可以换成其他分支**  
+```
+$ git push -u origin master
+
+$ git push origin master
+```
 
 <div id="克隆远程库"></div>
 
