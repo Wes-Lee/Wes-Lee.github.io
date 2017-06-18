@@ -311,7 +311,7 @@ soup.find_all("title")
 
 <div id="keyword参数"></div>
 
-### keyword参数
+#### keyword参数
 
 **如果一个指定名字的参数不是搜索内置的参数名，搜索时会把该参数当作指定名字tag的属性来搜索，如果包含一个名字为id的参数,Beautiful Soup会搜索每个tag的”id”属性**  
 **class作为参数时加下划线**  
@@ -328,7 +328,7 @@ soup.find_all("a", class_="sister")
 
 <div id="text参数"></div>
 
-### text参数
+#### text参数
 
 通过text参数可以搜搜文档中的字符串内容，与name参数的可选值一样，**text参数接受 字符串，正则表达式，列表，True**  
 ```python
@@ -341,7 +341,7 @@ soup.find_all(text=re.compile("Dormouse"))
 
 <div id="limit参数"></div>
 
-### limit参数
+#### limit参数
 
 **limit参数限制返回结果的数量，当搜索到的结果数量达到limit的限制时，就停止搜索返回结果**  
 
@@ -349,7 +349,7 @@ soup.find_all(text=re.compile("Dormouse"))
 
 <div id="recursive参数"></div>
 
-### recursive参数
+#### recursive参数
 
 调用tag的 find_all()方法时，Beautiful Soup会检索当前tag的所有子孙节点，**如果只想搜索tag的直接子节点，可以使用参数recursive=False**  
 
