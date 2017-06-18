@@ -192,6 +192,8 @@ for child in soup.descendants:
     print child
 ```
 
+<br />
+
 <div id="其他遍历"></div>
 
 ### 其他遍历
