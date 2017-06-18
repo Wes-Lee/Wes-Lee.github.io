@@ -173,7 +173,7 @@ print soup.head.contents
 
 <br />
 
-Tag的`.children`属性可以得到所有子节点的**list生成器对象**，**通过遍历输出 ** 
+Tag的`.children`属性可以得到所有子节点的**list生成器对象**， **通过遍历输出** 
 ```python
 for child in  soup.body.children:
     print child
@@ -196,7 +196,7 @@ for child in soup.descendants:
 
 ### 其他遍历
 
-还可以**遍历父节点，全部父节点，兄弟节点，全部兄弟节点，前后节点，全部前后节点**，用法类似，由于用的较少，在此不详细讲解，有需要可以查找[文档](http://beautifulsoup.readthedocs.io/zh_CN/latest/#id18)
+还可以**遍历父节点，全部父节点，兄弟节点，全部兄弟节点，前后节点，全部前后节点**，用法和遍历子节点类似，由于用的较少，在此不详细讲解，有需要可以查找[文档](http://beautifulsoup.readthedocs.io/zh_CN/latest/#id18)
 
 <br />
 
@@ -276,7 +276,7 @@ for tag in soup.find_all(True):
 
 #### 方法
 
-还可以定义一个方法，**方法只接受一个元素参数**，**如果这个方法返回True表示当前元素匹配并且被找到，如果不是则反回False**  
+还可以定义一个方法，**方法只接受一个元素参数**，**如果这个方法返回True表示当前元素匹配并且被找到，如果不是则返回False**  
 ```python
 def has_class_but_no_id(tag):
     return tag.has_attr('class') and not tag.has_attr('id')
