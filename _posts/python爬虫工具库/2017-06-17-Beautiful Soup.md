@@ -299,6 +299,8 @@ soup.find_all(has_class_but_no_id)
 `find_all()`方法搜索**当前tag的所有tag子节点**，并判断是否符合过滤器的条件，返回一个list  
 `find()`**方法与find_all()类似，但只返回第一个搜索的节点**  
 
+<br />
+
 <div id="name参数"></div>
 
 #### name参数
@@ -341,6 +343,8 @@ soup.find_all(text="Elsie")
 soup.find_all(text=re.compile("Dormouse"))
 [u"The Dormouse's story", u"The Dormouse's story"]
 ```
+
+<br />
 
 <div id="limit参数"></div>
 
