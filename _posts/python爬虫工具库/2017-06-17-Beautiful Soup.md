@@ -358,7 +358,7 @@ soup.find_all(text=re.compile("Dormouse"))
 
 #### recursive参数
 
-调用tag的 find_all()方法时，Beautiful Soup会检索当前tag的所有子孙节点，**如果只想搜索tag的直接子节点，可以使用参数recursive=False**  
+调用tag的 find_all()方法时，Beautiful Soup会检索当前tag的所有子孙节点，**如果只想搜索tag的直接子节点，可以使用参数**`recursive=False`  
 
 <br />
 
