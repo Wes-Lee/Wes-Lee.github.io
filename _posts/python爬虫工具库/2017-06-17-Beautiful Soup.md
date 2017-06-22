@@ -1,14 +1,14 @@
----
+----
 
-layout: post
+-layout: post
 
-title:  "Beautiful Soup"
+-title:  "Beautiful Soup"
 
-date:   2017-06-17 22:39:00
+-date:   2017-06-17 22:39:00
 
-categories: python爬虫工具库
+-categories: "python爬虫工具库"
 
----
+----
 
 * [Beautiful Soup](#BS)
 	* [解析器](#解析器)
