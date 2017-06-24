@@ -27,7 +27,7 @@ categories: python爬虫工具库
 
 # PhantomJS
 
-PhantomJS是一个**无界面的,可脚本编程**的WebKit浏览器引擎,**它原生支持多种web 标准：DOM 操作，CSS选择器，JSON，Canvas 以及SVG******，简单来说就是个**无界面浏览器**  
+PhantomJS是一个**无界面的,可脚本编程**的WebKit浏览器引擎,**它原生支持多种web 标准：DOM 操作，CSS选择器，JSON，Canvas 以及SVG**，简单来说就是个**无界面浏览器**  
 
 <br />
 
