@@ -1,24 +1,15 @@
 ---
 layout: post
-
 title:  "PhantomJS和Selenium"
-
 subtitle:   ""
-
 date:   2017-06-24 15:39:00
-
 author:     "Wes"
-
 header-img: ""
-
 header-mask: 0.3
-
 catalog:    true
-
 tags:
     - python
 	- 爬虫
-
 ---
 
 <div id="PhantomJS"></div>
