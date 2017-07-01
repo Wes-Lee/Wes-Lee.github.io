@@ -23,28 +23,6 @@ tags:
 
 这份笔记整理的资料大部分来自廖雪峰老师的[Git教程](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
 
-* [Git](#Git)
-	* [Git介绍](#Git介绍)
-	* [Git工作过程](#Git工作过程)
-	* [版本回退、撤销删除、删除文件](#版本回退、撤销删除、删除文件)
-		* [版本回退](#版本回退)
-		* [撤销删除](#撤销删除)
-		* [删除文件](#删除文件)
-	* [分支管理](#分支管理)
-		* [创建、合并、删除分支](#创建、合并、删除分支)
-		* [解决冲突](#解决冲突)
-		* [分支管理策略](#分支管理策略)
-		* [Bug分支和Feature分支](#Bug分支和Feature分支)
-	* [标签管理](#标签管理)
-		* [创建标签和操作标签](#创建标签和操作标签)
-* [Github](#Github)
-	* [远程仓库](#远程仓库)
-		* [添加远程库](#添加远程库)
-		* [推送至远程库](#推送至远程库)
-		* [克隆远程库](#克隆远程库)
-* [Git常用命令](#Git常用命令)
-
-
 <div id="Git"></div>
 
 # Git
@@ -95,16 +73,12 @@ $ git reset --hard HEAD^
 HEAD is now at c2e5a67 add justtest.txt
 ```
 
-<br />
-
 **注意回到过去版本后历史纪录中未来版本会消失，如果要回到未来版本可以用版本号**`commit id`  
 版本号不用写全，只用前几位，Git会自动搜索，但也不能太短，导致查找多个版本号  
 ```
 $ git reset --hard 0e7dd65
 HEAD is now at 0e7dd65 add test.txt
 ```
-
-<br />
 
 <div id="撤销删除"></div>
 
@@ -129,8 +103,6 @@ M       readme.txt
 回退到工作区后再丢弃工作区修改就彻底撤销修改了  
 如果提交到版本库就用版本回退，不过前提是没有推送到远程库  
 
-<br />
-
 <div id="删除文件"></div>
 
 ### 删除文件
@@ -144,8 +116,6 @@ $ git commit -m "remove test.txt"
  1 file changed, 0 insertions(+), 0 deletions(-)
  delete mode 100644 test.txt
 ```
-
-<br />
 
 如果误删文件也可以用`git checkout`命令恢复到**最新版本**
 ```
@@ -162,8 +132,6 @@ $ git checkout -- test.txt
 在新建版本库的时候都会有一条默认的分支`master`，可以在原分支新建一条互不干扰的分支，也可以进行分支合并  
 详细的分支和HEAD指针图解可以参阅[分支图解(廖雪峰老师)](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001375840038939c291467cc7c747b1810aab2fb8863508000)  
 
-<br />
-
 <div id="创建、合并、删除分支"></div>
 
 ### 创建、合并、删除分支
@@ -174,16 +142,12 @@ $ git checkout -b dev
 Switched to a new branch 'dev'
 ```
 
-<br />
-
 直接使用`git branch`可以查看所有分支，当前分支前面带有`*`号
 ```
 $ git branch
 * dev
   master
 ```
-
-<br />
 
 可以用`git merge`命令来合并分支到当前分支  
 **如果在合并的过程要提交新的commit，需要加上**`-m`**参数和commit的描述**  
@@ -196,15 +160,11 @@ Fast-forward
  create mode 100644 test.txt
 ```
 
-<br />
-
 合并后就可以删除分支了，删除分支用`git branch -d`命令
 ```
 $ git branch -d dev
 Deleted branch dev (was e6f4910).
 ```
-
-<br />
 
 <div id="解决冲突"></div>
 
@@ -218,8 +178,6 @@ CONFLICT (content): Merge conflict in test.txt
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-<br />
-
 可以用`git status`查看冲突的内容，手动修改后添加提交后即可解决冲突  
 用`git log --graph`可以查看分支的合并情况  
 
@@ -232,8 +190,6 @@ Automatic merge failed; fix conflicts and then commit the result.
 在通常情况下Git会用`Fast forward`模式，但这种模式下，删除分支后，会丢掉分支信息  
 如果需要保留历史纪录可以强制禁用`Fast forward`模式，Git就会在merge时生成一个新的commit  
 在合并时加上`--no-ff`参数，`git merge --no-ff`命令，由于合并要创建一个新的commit，所以加上`-m`参数，把commit描述写进去  
-
-<br />
 
 <div id="Bug分支和Feature分支"></div>
 
@@ -261,8 +217,6 @@ Automatic merge failed; fix conflicts and then commit the result.
 ```
 $ git tag -a v0.1 -m "version 0.1 released" 3628164
 ```
-
-<br />
 
 `git tag`命令可以查看所有标签  
 `git show <tagname>`可以查看某个标签的信息和说明  
