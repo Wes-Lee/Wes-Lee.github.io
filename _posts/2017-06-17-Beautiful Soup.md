@@ -9,7 +9,7 @@ date:   2017-06-15 18:12:00
 
 author:     "Wes"
 
-header-img: ""
+header-img: "img/BeautifulSoup-bg.png"
 
 header-mask: 0.3
 

@@ -10,7 +10,7 @@ date:   2017-06-10 10:06:00
 
 author:     "Wes"
 
-header-img: ""
+header-img: "img/Git-Github-bg.png"
 
 header-mask: 0.3
 

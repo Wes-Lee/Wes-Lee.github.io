@@ -9,7 +9,7 @@ date:   2017-06-24 15:39:00
 
 author:     "Wes"
 
-header-img: ""
+header-img: "img/Phantomjs和Selenium-bg.png"
 
 header-mask: 0.3
 
