@@ -17,7 +17,7 @@ catalog:    true
 
 tags:
     - python
-	- 爬虫
+    - 爬虫
 
 ---
 
@@ -175,6 +175,7 @@ find_element_by_class_name
 find_element_by_css_selector
 ```
 以上是单个选取返回第一个符合条件的，也可以使用多个选取返回所有符合的元素，只用将原函数的`element`换成`elements`就可以了，像`find_elements_by_id`  
+
 **另外还可以利用 By 类来确定哪种选择方式**
 ```python
 from selenium.webdriver.common.by import By
