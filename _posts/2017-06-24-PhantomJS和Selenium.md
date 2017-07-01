@@ -18,20 +18,8 @@ catalog:    true
 tags:
     - python
 	- 爬虫
----
 
-* [PhantomJS](#PhantomJS)
-	* [安装](#安装)
-	* [PhantomJS的使用](#PhantomJS的使用)
-* [Selenium](#Selenium)
-	* [页面操作](#页面操作)
-		* [页面交互和填充表单](#页面交互和填充表单)
-		* [填充下拉选项卡](#填充下拉选项卡)
-		* [元素拖拽](#元素拖拽)
-		* [Cookies处理](#Cookies处理)
-	* [页面等待](#页面等待)
-		* [显式等待](#显式等待)
-		* [隐式等待](#隐式等待)
+---
 
 <div id="PhantomJS"></div>
 
