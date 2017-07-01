@@ -1,8 +1,8 @@
 ----
 
--layout: post
+layout: post
 
--title:  "Beautiful Soup"
+title:  "Beautiful Soup"
 
 subtitle:   ""
 
@@ -16,36 +16,8 @@ catalog:    true
 
 tags:
     - python
-	- 爬虫
+    - 爬虫
 ----
-
-* [Beautiful Soup](#BS)
-	* [解析器](#解析器)
-	* [四大对象种类](#四大对象种类)
-		* [BeautifulSoup](#BeautifulSoup)
-		* [Tag](#Tag)
-		* [NavigableString](#NavigableString)
-		* [Comment](#Comment)
-	* [遍历文档树](#遍历文档树)
-		* [子节点](#子节点)
-		* [所有子孙节点](#所有子孙节点)
-		* [其他遍历](#其他遍历)
-	* [搜索文档树](#搜索文档树)
-		* [过滤器](#过滤器)
-			* [字符串](#字符串)
-			* [正则表达式](#正则表达式)
-			* [列表](#列表)
-			* [True](#True)
-			* [方法](#方法)
-		* [find_all](#find_all)
-			* [name参数](#name参数)
-			* [keyword参数](#keyword参数)
-			* [text参数](#text参数)
-			* [limit参数](#limit参数)
-			* [recursive参数](#recursive参数)
-	* [CSS选择器](#CSS选择器)
-	* [get_text](#get_text)
-
 
 <div id="BS"></div>
 
@@ -76,8 +48,6 @@ Beautiful Soup将HTML文档转换成树形结构的时候，**每个节点都是
 - NavigableString
 - Comment
 
-<br />
-
 <div id="BeautifulSoup"></div>
 
 ### BeautifulSoup
@@ -95,8 +65,6 @@ print soup1.prettify()
 ```
 其中使用了BeautifulSoup对象的`prettify()`**用于将BeautifulSoup格式化输出**  
 
-<br />
-
 <div id="Tag"></div>
 
 ### Tag
@@ -106,8 +74,6 @@ Tag就是 HTML 中的一个个标签，例如
 <title>The Dormouse's story</title>
 <a class="sister" href="http://example.com/elsie" id="link1">Elsie</a>
 ```
-
-<br />
 
 可以用BeautifulSoup对象来获取Tags  
 我们可以利用**soup加标签名**轻松地获取这些标签的内容  
@@ -119,8 +85,6 @@ print soup.title
 print soup.head
 #<head><title>The Dormouse's story</title></head>
 ```
-
-<br />
 
 对于 Tag，它有两个重要的属性，是`name`和`attrs`  
 **除了soup对象外，它的**`name`**是[document]**，**其他内部标签，输出的值便为标签本身的名称**  
@@ -135,8 +99,6 @@ print soup.p.attrs
 #{'class': ['title'], 'name': 'dromouse'}
 ```
 
-<br />
-
 <div id="NavigableString"></div>
 
 ### NavigableString
@@ -150,8 +112,6 @@ print soup.p.string
 print type(soup.p.string)
 #class 'bs4.element.NavigableString'
 ```
-
-<br />
 
 <div id="Comment"></div>
 
@@ -180,15 +140,11 @@ print soup.head.contents
 #[<title>The Dormouse's story</title>]
 ```
 
-<br />
-
 Tag的`.children`属性可以得到所有子节点的**list生成器对象**， **通过遍历输出** 
 ```python
 for child in  soup.body.children:
     print child
 ```
-
-<br />
 
 <div id="所有子孙节点"></div>
 
@@ -200,8 +156,6 @@ for child in  soup.body.children:
 for child in soup.descendants:
     print child
 ```
-
-<br />
 
 <div id="其他遍历"></div>
 
@@ -233,8 +187,6 @@ soup.find_all('b')
 # [<b>The Dormouse's story</b>]
 ```
 
-<br />
-
 <div id="正则表达式"></div>
 
 #### 正则表达式
@@ -248,8 +200,6 @@ for tag in soup.find_all(re.compile("^b")):
 # b
 ```
 
-<br />
-
 <div id="列表"></div>
 
 #### 列表
@@ -262,8 +212,6 @@ soup.find_all(["a", "b"])
 #  <a class="sister" href="http://example.com/lacie" id="link2">Lacie</a>,
 #  <a class="sister" href="http://example.com/tillie" id="link3">Tillie</a>]
 ```
-
-<br />
 
 <div id="True"></div>
 
@@ -281,8 +229,6 @@ for tag in soup.find_all(True):
 # b
 # a
 ```
-
-<br />
 
 <div id="方法"></div>
 
@@ -308,8 +254,6 @@ soup.find_all(has_class_but_no_id)
 `find_all()`方法搜索**当前tag的所有tag子节点**，并判断是否符合过滤器的条件，返回一个list  
 `find()`**方法与find_all()类似，但只返回第一个搜索的节点**  
 
-<br />
-
 <div id="name参数"></div>
 
 #### name参数
@@ -320,8 +264,6 @@ name参数可以查找所有名字为name的tag,字符串对象会被自动忽�
 soup.find_all("title")
 # [<title>The Dormouse's story</title>]
 ```
-
-<br />
 
 <div id="keyword参数"></div>
 
@@ -338,8 +280,6 @@ soup.find_all("a", class_="sister")
 # [<a class="sister" href="http://example.com/elsie" id="link1">Elsie</a>]
 ```
 
-<br />
-
 <div id="text参数"></div>
 
 #### text参数
@@ -353,15 +293,11 @@ soup.find_all(text=re.compile("Dormouse"))
 [u"The Dormouse's story", u"The Dormouse's story"]
 ```
 
-<br />
-
 <div id="limit参数"></div>
 
 #### limit参数
 
 **limit参数限制返回结果的数量，当搜索到的结果数量达到limit的限制时，就停止搜索返回结果**  
-
-<br />
 
 <div id="recursive参数"></div>
 
@@ -397,8 +333,6 @@ print soup.select('a')
 #[<a class="sister" href="http://example.com/elsie" id="link1"><!-- Elsie --></a>]
 ```
 
-<br />
-
 <div id="通过类名查找"></div>
 
 ### 通过类名查找
@@ -407,8 +341,6 @@ print soup.select('a')
 print soup.select('.sister')
 #[<a class="sister" href="http://example.com/elsie" id="link1"><!-- Elsie --></a>]
 ```
-
-<br />
 
 <div id="通过id名查找"></div>
 
@@ -419,8 +351,6 @@ print soup.select('#link1')
 #[<a class="sister" href="http://example.com/elsie" id="link1"><!-- Elsie --></a>]
 ```
 
-<br />
-
 <div id="属性查找"></div>
 
 ### 属性查找
@@ -430,8 +360,6 @@ print soup.select('#link1')
 print soup.select('a[href="http://example.com/elsie"]')
 #[<a class="sister" href="http://example.com/elsie" id="link1"><!-- Elsie --></a>]
 ```
-
-<br />
 
 <div id="组合查找"></div>
 
@@ -447,15 +375,11 @@ print soup.select('p a[href="http://example.com/elsie"]')
 #[<a class="sister" href="http://example.com/elsie" id="link1"><!-- Elsie --></a>]
 ```
 
-<br />
-
 也可以直接查找子标签  
 ```python
 print soup.select("head > title")
 #[<title>The Dormouse's story</title>]
 ```
-
-<br />
 
 <div id="get_text"></div>
 
@@ -474,11 +398,7 @@ soup.get_text("|", strip=True)
 # u'I linked to|example.com'
 ```
 
-<br />
-
 `.string`和`get_text()`都可以获取节点文本，区别在于`.string`**只找寻唯一的节点或子节点文本内容，若有多个则返回**`None`，而`get_text()`**则是找寻所有子孙节点的文本内容**  
-
-<br />
 
 `.strings`得到生成器来循环也可以得到节点下所有的字符串，`stripped_strings`可以清除空格  
 ```python

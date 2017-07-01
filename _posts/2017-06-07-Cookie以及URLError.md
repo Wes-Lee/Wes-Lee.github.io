@@ -22,17 +22,6 @@ tags:
 
 ---
 
-* [Cookie](#Cookie)
-	* [Cookie介绍](#Cookie介绍)
-	* [Cookielib](#Cookielib)
-		* [获取Cookie保存到变量](#获取Cookie保存到变量)
-		* [保存Cookie到文件](#保存Cookie到文件)
-		* [从文件中获取Cookie并访问](#从文件中获取Cookie并访问)
-		* [利用cookie模拟登陆](#利用cookie模拟登陆)
-* [URLError](#URLError)
-	* [HTTPError](#HTTPError)
-
-
 <div id="Cookie"></div>
 
 # Cookie
@@ -54,8 +43,6 @@ tags:
 
 cookielib模块的主要作用是提供可存储cookie的对象，以便于与urllib2模块配合使用来访问Internet资源。Cookielib模块非常强大，我们可以利用本模块的**CookieJar类**的对象来捕获cookie并在后续连接请求时重新发送，比如可以实现模拟登录功能。该模块主要的对象有**CookieJar**、**FileCookieJar**、**MozillaCookieJa**r、**LWPCookieJar**  
 **CookieJar -> 派生 -> FileCookieJar -> 派生 –> MozillaCookieJar和LWPCookieJar**  
-
-<br />
 
 <div id="获取Cookie保存到变量"></div>
 
@@ -82,8 +69,6 @@ for item in cookie:
 
 上面的例子将opener打开的网页的cookie保存到变量多，可以打印出cookie的值  
 
-<br />
-
 <div id="保存Cookie到文件"></div>
 
 ### 保存Cookie到文件
@@ -108,8 +93,6 @@ cookie.save(ignore_discard=True, ignore_expires=True)
 ```
 其中`.save()`函数中的**ignore_discard**的意思是即使cookies将被丢弃也将它保存下来，**ignore_expires**的意思是如果在该文件中Cookies已经存在，则覆盖原文件写入  
 
-<br />
-
 <div id="从文件中获取Cookie并访问"></div>
 
 ### 从文件中获取Cookie并访问
@@ -131,8 +114,6 @@ opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cookie))
 response = opener.open(req)
 print response.read()
 ```
-
-<br />
 
 <div id="利用cookie模拟登陆"></div>
 
@@ -158,8 +139,6 @@ response = opener.open(request)
 print response.read()
 ```
 
-<br />
-
 <div id="URLError"></div>
 
 ## URLError
@@ -180,8 +159,6 @@ try:
 except urllib2.URLError, e:
     print e.reason
 ```
-
-<br />
 
 <div id="HTTPError"></div>
 
@@ -205,8 +182,6 @@ except urllib2.URLError, e:
 else:
     print "OK"
 ```
-
-<br />
 
 **HTTP1.1状态码大致分五大类：**
 1. 100-199 用于指定客户端应相应的某些动作
