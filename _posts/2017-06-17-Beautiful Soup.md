@@ -1,24 +1,15 @@
 ---
 layout: post
-
 title:  "Beautiful Soup"
-
 subtitle:   ""
-
 date:   2017-06-15 18:12:00
-
 author:     "Wes"
-
 header-img: "img/BeautifulSoup-bg.png"
-
 header-mask: 0.3
-
 catalog:    true
-
 tags:
     - python
     - 爬虫
-
 ---
 
 <div id="BS"></div>

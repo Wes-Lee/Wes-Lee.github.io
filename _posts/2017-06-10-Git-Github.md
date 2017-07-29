@@ -1,24 +1,14 @@
 ---
-
 layout: post
-
 title:  "Git-Github"
-
 subtitle:   ""
-
 date:   2017-06-10 10:06:00
-
 author:     "Wes"
-
 header-img: "img/Git-Github-bg.jpg"
-
 header-mask: 0.3
-
 catalog:    true
-
 tags:
     - Git
-
 ---
 
 这份笔记整理的资料大部分来自廖雪峰老师的[Git教程](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
@@ -46,7 +36,7 @@ Git和其他**集中式版本控制系统**不一样，不需要服务器端软�
 **版本库（Repository）**：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库  
 Git的版本库里存了很多东西，其中最重要的就是称为**stage（或者叫index）的暂存区**，还有Git为我们自动创建的第一个**分支**`master`，以及指向master的一个**指针**叫`HEAD`  
 
-![](https://aswz.github.io/assets/img/Git/Git-Github/Git工作流程.png)
+![](https://wes-lee.github.io/assets/img/Git/Git-Github/Git工作流程.png)
 
 将文件往Git版本库添加时分为两步:  
 **第一步是用**`git add`把文件**添加**进去，实际上就是把**文件修改添加到暂存区**  
@@ -237,7 +227,7 @@ $ git tag -a v0.1 -m "version 0.1 released" 3628164
 ## 远程仓库
 
 Git各个工作区之间的关系：  
-![](https://aswz.github.io/assets/img/Git/Git-Github/Git各个区域的关系.png)
+![](https://wes-lee.github.io/assets/img/Git/Git-Github/Git各个区域的关系.png)
 
 由于你的本地Git仓库和GitHub仓库之间的传输是通过**SSH加密**的，所以要先设置账户和本地的**SSH Key**，是为了识别出你推送的提交确实是你推送的，具体设置方法可以直接搜索  
 
@@ -285,4 +275,4 @@ $ git clone git@github.com:username/xxxxxx.git
 
 # Git常用命令
 
-![](https://aswz.github.io/assets/img/Git/Git-Github/Git常用命令.jpeg)
+![](https://wes-lee.github.io/assets/img/Git/Git-Github/Git常用命令.jpeg)
